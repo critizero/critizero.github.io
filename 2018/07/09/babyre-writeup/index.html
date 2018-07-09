@@ -10,7 +10,7 @@
     
     
     
-    <title>Hello World | Critizero</title>
+    <title>babyre writeup | Critizero</title>
     <link href=”https://critizero.github.io“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -180,13 +180,13 @@
         <i class="fa fa-home"></i>
         <a href="https://critizero.github.io">Critizero</a>
         >
-        <span>Hello World</span>
+        <span>babyre writeup</span>
     </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/07/08/hello-world/">Hello World</a>
+                <a href="/2018/07/09/babyre-writeup/">babyre writeup</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -194,12 +194,14 @@
             <span class="label label-gal">
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/sundry/">sundry</a>
+                <a href="/tags/Reverse/">Reverse</a>, 
+                
+                <a href="/tags/writeup/">writeup</a>
                 
             </span>
             
             <span class="label label-gal">
-                <i class="fa fa-calendar"></i> 2018-07-08
+                <i class="fa fa-calendar"></i> 2018-07-09
             </span>
             
         </div>
@@ -209,17 +211,19 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/07/08/hello-world/">Hello World</a>
+                    <a href="/2018/07/09/babyre-writeup/">babyre writeup</a>
                 </h4>
             </div>
             <p>
-                <i class="fa fa-calendar"></i> 2018-07-08
+                <i class="fa fa-calendar"></i> 2018-07-09
             </p>
             <p>
                 
                 <i class="fa fa-tags"></i>
                 
-                <a href="/tags/sundry/">sundry</a>
+                <a href="/tags/Reverse/">Reverse</a>, 
+                
+                <a href="/tags/writeup/">writeup</a>
                 
                 
                 
@@ -227,12 +231,28 @@
         </center>
     </div>
     <div class="content-article">
-        <p>ctf萌新报道！</p>
-<p>开这个blog是为了记录我写<del>不出来和没</del>过的题，顺便写点总结啥的</p>
-<p>十分感谢 <a href="https://blog.codgician.pw/" target="_blank" rel="noopener">codgician</a> 大佬的无私帮助，才能顺利搭好这个blog~ %%%%%%%</p>
-<p>就跟每个语言的初学者的第一份代码一样</p>
-<h1 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h1><p>Hello world~</p>
-<p><img src="/2018/07/08/hello-world/img1.jpg" alt="img1"></p>
+        <p><del>又开始口胡了</del></p>
+<p>这个题是18年SUCTF的题，我当时当然一下子就<del>没看出来</del>放弃了，毕竟那时候比现在还要菜(现在也很菜就是了)。。。</p>
+<p><a href="babyre.zip">题目在这</a></p>
+<h1 id="看题"><a href="#看题" class="headerlink" title="看题"></a>看题</h1><p>题目说的是现有一个加密后的密文和加密程序，需要得到明文</p>
+<p>这次会长抛给这道题的时候我以为是那种把加密过程逆一下的那种加密（之前做过逆加密的题），然后看那段加密看了很久，很久，很久，妈耶完全做不出来好嘛(ノ=Д=)ノ┻━┻</p>
+<p>然后，会长说这不是逆加密，用爆破就好了。。。</p>
+<p>然后，好的，我这就去试试。。。</p>
+<h1 id="一顿分析"><a href="#一顿分析" class="headerlink" title="一顿分析"></a>一顿分析</h1><p>打开ida，熟练地按下F5</p>
+<p>虽说之前想法是错的，但至少得到了点东西，比如</p>
+<p><img src="/2018/07/09/babyre-writeup/babyre/img1.jpg" alt="img1"></p>
+<p>这么多函数连同srand在内只有operate有用。。。看了挺久才发现233333</p>
+<p>进入operate函数就能看到我们的加密函数了，进去看看就会发现</p>
+<p><img src="/2018/07/09/babyre-writeup/babyre/img2.jpg" alt="img2"></p>
+<p>它是单字节加密的，所以就可以爆破，四个字节以内的都能爆破。</p>
+<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p>我把out里的密文按照unsigned int 的大小分开了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> num[]=&#123;</span><br><span class="line">			<span class="number">0xB80C91FE</span>,<span class="number">0x70573EFE</span>,<span class="number">0xBEED92AE</span>,<span class="number">0x7F7A8193</span>,</span><br><span class="line">			<span class="number">0x7390C17B</span>,<span class="number">0x90347C6C</span>,<span class="number">0xAA7A15DF</span>,<span class="number">0xAA7A15DF</span>,</span><br><span class="line">			<span class="number">0x526BA076</span>,<span class="number">0x153F1A32</span>,<span class="number">0x545C15AD</span>,<span class="number">0x7D8AA463</span>,</span><br><span class="line">			<span class="number">0x526BA076</span>,<span class="number">0xFBCB7AA0</span>,<span class="number">0x7D8AA463</span>,<span class="number">0x9C513266</span>,</span><br><span class="line">			<span class="number">0x526BA076</span>,<span class="number">0x6D7DF3E1</span>,<span class="number">0xAA7A15DF</span>,<span class="number">0x9C513266</span>,</span><br><span class="line">			<span class="number">0x1EDC3864</span>,<span class="number">0x9323BC07</span>,<span class="number">0x7D8AA463</span>,<span class="number">0xFBCB7AA0</span>,</span><br><span class="line">			<span class="number">0x153F1A32</span>,<span class="number">0x526BA076</span>,<span class="number">0xF5650025</span>,<span class="number">0xAA7A15DF</span>,</span><br><span class="line">			<span class="number">0x1EDC3864</span>,<span class="number">0xB13AD888</span>,<span class="number">0</span>&#125;; </span><br><span class="line"><span class="keyword">unsigned</span> __int64 constant = <span class="number">0x1D082C23A72BE4C1</span>;</span><br><span class="line"><span class="keyword">unsigned</span> __int64 v5;</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">int</span> res;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">unsigned</span> <span class="keyword">int</span> i=<span class="number">0</span>;num[i]!=<span class="number">0</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">int</span> ans;</span><br><span class="line">	<span class="keyword">for</span>(ans=<span class="number">0x20</span>;ans&lt;<span class="number">0x7f</span>;ans++)</span><br><span class="line">	&#123;</span><br><span class="line">		res = ans;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">unsigned</span> <span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">0x20f</span>;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			v5 = constant &gt;&gt; (j &amp; <span class="number">0x1f</span>);</span><br><span class="line">			<span class="keyword">if</span>(j &amp; <span class="number">0x20</span>)</span><br><span class="line">				LODWORD(v5) = HIDWORD(v5);</span><br><span class="line">			res = (res &gt;&gt; <span class="number">1</span>) ^ (((<span class="keyword">unsigned</span> <span class="keyword">int</span>)v5 ^ res ^ (res &gt;&gt; <span class="number">16</span>) ^ (<span class="number">1551120942</span> &gt;&gt; (((res &gt;&gt; <span class="number">1</span>) &amp; <span class="number">1</span>)</span><br><span class="line">                   + <span class="number">2</span></span><br><span class="line">                   * (<span class="number">2</span></span><br><span class="line">                   * (((res &gt;&gt; <span class="number">20</span>) &amp; <span class="number">1</span>)</span><br><span class="line">                   + <span class="number">2</span> * (<span class="number">2</span> * (res &gt;&gt; <span class="number">31</span>) + ((res &gt;&gt; <span class="number">26</span>) &amp; <span class="number">1</span>)))</span><br><span class="line">                   + ((res &gt;&gt; <span class="number">9</span>) &amp; <span class="number">1</span>))))) &lt;&lt; <span class="number">31</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(res == num[i])</span><br><span class="line">		&#123;	</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%c"</span>,ans);  <span class="comment">//跑完flag就出来了</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="另外一个石乐志的做法"><a href="#另外一个石乐志的做法" class="headerlink" title="另外一个石乐志的做法"></a>另外一个<del>石乐志的</del>做法</h1><p>我开始写脚本的手，ans循环里0x7F中把F看成跟L这类符号一样的符号了，本着化简的想法（<del>然而我下面一行的0x1F却完全没有化简的想法</del>），就把F删了。。。删了。。。删了。。。正当我看着跑出来的乱码迷得一比的时候，我发现，我可以把ASCII码表加密一遍啊！卧槽，我真机(shi)智！</p>
+<p>由之前的分析，进入加密函数之前有两次输入，第一次是输入任意字符串，第二次输入一个数seed，必须满足9&lt;n&lt;=32。然后每次只能加密30个字符。</p>
+<p>然后就开始了快(you)乐(du)的加密，把ASCII码表从0x21开始到0x7F的可打印字符加密出来，然后一个个和密文比对，也能得出flag。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;num[i]!=<span class="number">0</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">95</span>;j++)     <span class="comment">//num储存ASCII可打印字符加密结果</span></span><br><span class="line">			<span class="keyword">if</span>(num[i] == ans[j])     <span class="comment">//ans储存密文</span></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%c"</span>,j+<span class="number">33</span>);     <span class="comment">//ASCII可打印字符从0x21（33）开始</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这个题，貌似是签到题，所以并不是很复杂，我找对方向以后也就用了一个晚上的时间(当然，没找对方向的时候用了几天。。。也没做出来)</p>
+<p>果然，reverse的题花样还是很多的，而且一道题说不定有比较简单的方式，比如这道题可以啥也不管直接加密ASCII码表然后对比2333333，当然这是事后才知道哈哈哈</p>
 
     </div>
 </article>
@@ -353,23 +373,23 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2018/07/08/hello-world/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/07/09/babyre-writeup/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2018/07/08/hello-world/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/07/09/babyre-writeup/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2018/07/08/hello-world/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/07/09/babyre-writeup/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Reverse/" style="font-size: 8.611953012277697px;" class="tag-cloud-link">Reverse</a>
+    <a href="/tags/Reverse/" style="font-size: 18.977605155476553px;" class="tag-cloud-link">Reverse</a>
     
-    <a href="/tags/writeup/" style="font-size: 10.180896520251828px;" class="tag-cloud-link">writeup</a>
+    <a href="/tags/writeup/" style="font-size: 9.003963544485416px;" class="tag-cloud-link">writeup</a>
     
-    <a href="/tags/sundry/" style="font-size: 19.399834551386387px;" class="tag-cloud-link">sundry</a>
+    <a href="/tags/sundry/" style="font-size: 13.880581557684854px;" class="tag-cloud-link">sundry</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">

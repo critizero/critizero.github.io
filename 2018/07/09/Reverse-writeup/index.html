@@ -186,7 +186,7 @@
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/2018/07/09/Reverse/">Reverse writeup</a>
+                <a href="/2018/07/09/Reverse-writeup/">Reverse writeup</a>
             </h1>
         </div>
         <div class="tag-article">
@@ -211,7 +211,7 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/2018/07/09/Reverse/">Reverse writeup</a>
+                    <a href="/2018/07/09/Reverse-writeup/">Reverse writeup</a>
                 </h4>
             </div>
             <p>
@@ -237,11 +237,11 @@
 <p><a href="Reverse">题目在这</a></p>
 <h1 id="随便看看"><a href="#随便看看" class="headerlink" title="随便看看"></a>随便看看</h1><p>在Ubuntu里file得知是64位的文件</p>
 <p>运行下试试</p>
-<p><img src="/2018/07/09/Reverse/img1.png" alt="尝试"></p>
+<p><img src="/2018/07/09/Reverse-writeup/Reverse/img1.png" alt="尝试"></p>
 <p>看起来就是要找到密码 <del>废话！</del></p>
-<h1 id="一顿分析"><a href="#一顿分析" class="headerlink" title="一顿分析"></a>一顿分析</h1><p>用最爱的IDA打开</p>
-<p><img src="/2018/07/09/Reverse/img2.jpg" alt="img2"></p>
-<h1 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h1><p><img src="/2018/07/09/Reverse/img3.png" alt="img3"></p>
+<h1 id="一顿分析"><a href="#一顿分析" class="headerlink" title="一顿分析"></a>一顿分析</h1><p>用IDA打开</p>
+<p><img src="/2018/07/09/Reverse-writeup/Reverse/img2.jpg" alt="img2"></p>
+<h1 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h1><p><img src="/2018/07/09/Reverse-writeup/Reverse/img3.png" alt="img3"></p>
 <ul>
 <li>密码长度为32个字符串</li>
 <li>每4位组合成一个int类型的值</li>
@@ -251,7 +251,7 @@
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul>
 <li>python的z3-solver库，linux下的</li>
 </ul>
-<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p><img src="/2018/07/09/Reverse/img4.png" alt="img4"></p>
+<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p><img src="/2018/07/09/Reverse-writeup/Reverse/img4.png" alt="img4"></p>
 <ul>
 <li>前四位（a,b,c,d)</li>
 </ul>
@@ -276,10 +276,10 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">32</span>]=&#123;<span class="number">0x61</span>,<span class="number">0x6D</span>,<span class="number">0x70</span>,<span class="number">0x6F</span>,<span class="number">0x5A</span>,<span class="number">0x32</span>,<span class="number">0x5A</span>,<span class="number">0x6B</span>,<span class="number">0x4E</span>,<span class="number">0x6E</span>,<span class="number">0x6B</span>,<span class="number">0x31</span>,<span class="number">0x4E</span>,<span class="number">0x48</span>,<span class="number">0x6C</span>,<span class="number">0x33</span>,</span><br><span class="line">             <span class="number">0x4E</span>,<span class="number">0x54</span>,<span class="number">0x63</span>,<span class="number">0x30</span>,<span class="number">0x4E</span>,<span class="number">0x54</span>,<span class="number">0x63</span>,<span class="number">0x31</span>,<span class="number">0x5A</span>,<span class="number">0x33</span>,<span class="number">0x4E</span>,<span class="number">0x6F</span>,<span class="number">0x61</span>,<span class="number">0x47</span>,<span class="number">0x46</span>,<span class="number">0x47</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">32</span>;i++)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%c"</span>,sum[i]);</span><br></pre></td></tr></table></figure>
 <h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>然后就是激动人心的得到falg的过程了</p>
-<p><img src="/2018/07/09/Reverse/img5.jpg" alt="img5"></p>
+<p><img src="/2018/07/09/Reverse-writeup/Reverse/img5.jpg" alt="img5"></p>
 <p>看来没错了</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    这个题讲真，虽然是很简单的那种题<del>毕竟连我都会</del>，但是那种激动的感觉真的没法用言语说明，就像发现新大陆的感觉，也可能是那种学了这么久能独立写出题的快乐吧</p>
-<p><img src="/2018/07/09/Reverse/img6.jpg" alt="img6"></p>
+<p><img src="/2018/07/09/Reverse-writeup/Reverse/img6.jpg" alt="img6"></p>
 
     </div>
 </article>
@@ -341,7 +341,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/09/Reverse/">Reverse writeup</a>
+                    <a href="/2018/07/09/babyre-writeup/">babyre writeup</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/09/Reverse-writeup/">Reverse writeup</a>
                 </span>
             </li>
             
@@ -369,7 +375,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/07/09/Reverse/">Reverse writeup</a>
+                    <a href="/2018/07/09/Reverse-writeup/">Reverse writeup</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/09/babyre-writeup/">babyre writeup</a>
                 </span>
             </li>
             
@@ -388,23 +400,23 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/2018/07/09/Reverse/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/07/09/Reverse-writeup/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/2018/07/09/Reverse/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/07/09/Reverse-writeup/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/2018/07/09/Reverse/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/07/09/Reverse-writeup/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Reverse/" style="font-size: 9.778935627355871px;" class="tag-cloud-link">Reverse</a>
+    <a href="/tags/Reverse/" style="font-size: 8.580134963699187px;" class="tag-cloud-link">Reverse</a>
     
-    <a href="/tags/writeup/" style="font-size: 12.823773765912605px;" class="tag-cloud-link">writeup</a>
+    <a href="/tags/writeup/" style="font-size: 19.638719726157944px;" class="tag-cloud-link">writeup</a>
     
-    <a href="/tags/sundry/" style="font-size: 14.184871461707058px;" class="tag-cloud-link">sundry</a>
+    <a href="/tags/sundry/" style="font-size: 18.456974626538578px;" class="tag-cloud-link">sundry</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
