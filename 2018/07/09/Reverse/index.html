@@ -10,7 +10,7 @@
     
     
     
-    <title>about | Critizero</title>
+    <title>Reverse writeup | Critizero</title>
     <link href=”http://yoursite.com“ rel=”prefetch” />
 
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -159,7 +159,7 @@
                 
                 
                 
-                <li class="current">
+                <li class="">
                     <a href="/about">
                         <i class="fa fa-user"></i>关于我
                     </a>
@@ -174,21 +174,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 gal-right" id="mainstay">
-                    <!-- 搜索页面(尽可能接近ZanBlog搜索功能) -->
-
-
+                    
 <article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">Critizero</a>
+        >
+        <span>Reverse writeup</span>
+    </div>
     <!-- 大型设备详细文章 -->
     <div class="hidden-xs">
         <div class="title-article">
             <h1>
-                <a href="/about/index.html">about</a>
+                <a href="/2018/07/09/Reverse/">Reverse writeup</a>
             </h1>
         </div>
         <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Reverse/">Reverse</a>, 
+                
+                <a href="/tags/writeup/">writeup</a>
+                
+            </span>
+            
             <span class="label label-gal">
                 <i class="fa fa-calendar"></i> 2018-07-09
             </span>
+            
         </div>
     </div>
     <!-- 小型设备详细文章 -->
@@ -196,19 +211,78 @@
         <center>
             <div class="title-article">
                 <h4>
-                    <a href="/about/index.html">about</a>
+                    <a href="/2018/07/09/Reverse/">Reverse writeup</a>
                 </h4>
             </div>
             <p>
                 <i class="fa fa-calendar"></i> 2018-07-09
             </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Reverse/">Reverse</a>, 
+                
+                <a href="/tags/writeup/">writeup</a>
+                
+                
+                
+            </p>
         </center>
     </div>
     <div class="content-article">
-        
+        <p><del>本辣鸡要开始口胡了</del></p>
+<p>前几天会长发了道练习题，本萌新尝试着做了一下，然后</p>
+<p>第一次完全自己做出题真tm开心</p>
+<p><a href="/Reverse/Reverse">题目在这</a></p>
+<h1 id="随便看看"><a href="#随便看看" class="headerlink" title="随便看看"></a>随便看看</h1><p>在Ubuntu里file得知是64位的文件</p>
+<p>运行下试试</p>
+<p><img src="/2018/07/09/Reverse/img1.png" alt="尝试"></p>
+<p>看起来就是要找到密码 <del>废话！</del></p>
+<h1 id="一顿分析"><a href="#一顿分析" class="headerlink" title="一顿分析"></a>一顿分析</h1><p>用最爱的IDA打开</p>
+<p><img src="/2018/07/09/Reverse/img2.jpg" alt="img2"></p>
+<h1 id="发现"><a href="#发现" class="headerlink" title="发现"></a>发现</h1><p><img src="/2018/07/09/Reverse/img3.png" alt="img3"></p>
+<ul>
+<li>密码长度为32个字符串</li>
+<li>每4位组合成一个int类型的值</li>
+<li>判断总共是8个方程</li>
+<li>前四个int类型的数异或以后当成rand的种子</li>
+</ul>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul>
+<li>python的z3-solver库，linux下的</li>
+</ul>
+<h1 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h1><p><img src="/2018/07/09/Reverse/img4.png" alt="img4"></p>
+<ul>
+<li>前四位（a,b,c,d)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">from</span> z3 <span class="keyword">import</span> *</span><br><span class="line">a = Int(<span class="string">'a'</span>)</span><br><span class="line">b = Int(<span class="string">'b'</span>)</span><br><span class="line">c = Int(<span class="string">'c'</span>)</span><br><span class="line">d = Int(<span class="string">'d'</span>)</span><br><span class="line">solve(b*a-c*d == <span class="number">0x24CDF2E7C953DA56</span>,</span><br><span class="line">      <span class="number">3</span>*c+<span class="number">4</span>*d-b<span class="number">-2</span>*a == <span class="number">0x17B85F06</span>,</span><br><span class="line">      <span class="number">3</span>*a*d-c*b == <span class="number">0x2E6E497E6415CF3E</span>,</span><br><span class="line">      <span class="number">27</span>*b+a<span class="number">-11</span>*d-c == <span class="number">0x95AE13337</span>)</span><br></pre></td></tr></table></figure>
+<p>​    解出来就得到密码前16位</p>
+<ul>
+<li>后四位（e,f,g,h）<ul>
+<li>按照只要种子一样，得到的随机数数列也是相同的，所以很容易得到它的那些参数，但是这里我踩了个坑</li>
+<li><strong>这里随机数要用gdb单步出来</strong></li>
+<li>我开始没在Ubuntu里，在Windows下用C语言写的，然后得到的参数根本解不出来。。。</li>
+<li>只要把前十六位解出来转换成字符串，再加上16位任意字符，凑成32位的密码，关注得到随机参数时eax的值，记录下来就是了，顺便还能检查一下前十六位有没有解错（解错会有跳转</li>
+<li>至于为什么，<del>其实我也不知道</del>大概是因为系统不同吧</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="keyword">from</span> z3 <span class="keyword">import</span> *</span><br><span class="line">e = Int(<span class="string">'e'</span>)</span><br><span class="line">f = Int(<span class="string">'f'</span>)</span><br><span class="line">g = Int(<span class="string">'g'</span>)</span><br><span class="line">h = Int(<span class="string">'h'</span>)</span><br><span class="line">solve(h*<span class="number">0x27</span>+e*<span class="number">0x16</span>-f-g == <span class="number">0xE638C96D3</span>,</span><br><span class="line">      h+e+g*<span class="number">0x2d</span>-f*<span class="number">0x2d</span> == <span class="number">0xB59F2D0CB</span>,</span><br><span class="line">      e*<span class="number">0x23</span>+f*<span class="number">0x29</span>-g-h == <span class="number">0xDCFE88C6D</span>,</span><br><span class="line">      g*<span class="number">0x24</span>+e-f-h*<span class="number">0xd</span> == <span class="number">0xC076D98BB</span>)</span><br></pre></td></tr></table></figure>
+<p>​    同样，跑出来就是密码后16位</p>
+<ul>
+<li><p>密码</p>
+<p>将32位都跑出来以后，直接转换成字符串，就能得到密码</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i;</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">32</span>]=&#123;<span class="number">0x61</span>,<span class="number">0x6D</span>,<span class="number">0x70</span>,<span class="number">0x6F</span>,<span class="number">0x5A</span>,<span class="number">0x32</span>,<span class="number">0x5A</span>,<span class="number">0x6B</span>,<span class="number">0x4E</span>,<span class="number">0x6E</span>,<span class="number">0x6B</span>,<span class="number">0x31</span>,<span class="number">0x4E</span>,<span class="number">0x48</span>,<span class="number">0x6C</span>,<span class="number">0x33</span>,</span><br><span class="line">             <span class="number">0x4E</span>,<span class="number">0x54</span>,<span class="number">0x63</span>,<span class="number">0x30</span>,<span class="number">0x4E</span>,<span class="number">0x54</span>,<span class="number">0x63</span>,<span class="number">0x31</span>,<span class="number">0x5A</span>,<span class="number">0x33</span>,<span class="number">0x4E</span>,<span class="number">0x6F</span>,<span class="number">0x61</span>,<span class="number">0x47</span>,<span class="number">0x46</span>,<span class="number">0x47</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">32</span>;i++)</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%c"</span>,sum[i]);</span><br></pre></td></tr></table></figure>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>然后就是激动人心的得到falg的过程了</p>
+<p><img src="/2018/07/09/Reverse/img5.jpg" alt="img5"></p>
+<p>看来没错了</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    这个题讲真，虽然是很简单的那种题<del>毕竟连我都会</del>，但是那种激动的感觉真的没法用言语说明，就像发现新大陆的感觉，也可能是那种学了这么久能独立写出题的快乐吧</p>
+<p><img src="/2018/07/09/Reverse/img6.jpg" alt="img6"></p>
+
     </div>
 </article>
-
 
 
                 </div>
@@ -314,23 +388,23 @@
         <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
             <ul class="nav nav-pills pills-gal">
                 <li class="">
-                    <a href="/about/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                    <a href="/2018/07/09/Reverse/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
                 </li>
                 <li class="">
-                    <a href="/about/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                    <a href="/2018/07/09/Reverse/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
                 </li>
                 <li class="">
-                    <a href="/about/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                    <a href="/2018/07/09/Reverse/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
                 </li>
             </ul>
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Reverse/" style="font-size: 17.37004389229996px;" class="tag-cloud-link">Reverse</a>
+    <a href="/tags/Reverse/" style="font-size: 19.15489593478074px;" class="tag-cloud-link">Reverse</a>
     
-    <a href="/tags/writeup/" style="font-size: 17.90413380103537px;" class="tag-cloud-link">writeup</a>
+    <a href="/tags/writeup/" style="font-size: 16.00271706338116px;" class="tag-cloud-link">writeup</a>
     
-    <a href="/tags/sundry/" style="font-size: 10.106041354415538px;" class="tag-cloud-link">sundry</a>
+    <a href="/tags/sundry/" style="font-size: 9.194126398386437px;" class="tag-cloud-link">sundry</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
