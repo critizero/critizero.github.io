@@ -245,17 +245,17 @@
 <p>步进以后是各种系统函数的开头ntdll.xxxxxxx开头的各种调用，开始慌了，但是这些应该都是系统调用，主要看的应该是magic.xxxxx这样的才对</p>
 <p>然后就每个magic开头的调用都用ida找到对应的地址，分析一波函数，耗费无数时间和头发以后，终于来到一个奇妙的函数sub_402563，用ida看这个函数是这样子的：</p>
 <p><img src="/2018/07/29/magic/img3.png" alt="img3"></p>
-<p>这个看起来就很棒啊，看着一地的头发，我不禁陷入沉思：为什么不一开始就搜索字符串。。。</p>
+<p>这个看起来就很棒啊，然而看着一地的头发，我不禁陷入沉思：为什么不一开始就搜索字符串。。。</p>
 <p>然后看这判断，一看就可以写脚本跑啊，然后</p>
 <p><img src="/2018/07/29/magic/img4.png" alt="img4"></p>
 <p>呵呵，摔(╯‵□′)╯︵┻━┻</p>
 <p>对不起我这一地头发！！！</p>
 <p>算了继续。</p>
-<p>然后就接着单步，在wp的提醒下，我学会了一边看控制台一边单步，来找到关键函数。。。（我还是太菜了</p>
+<p>然后就接着单步，在wp的提醒下(羞愧，捂脸)，我学会了一边看控制台一边单步，来找到关键函数。。。（我还是太菜了</p>
 <p><img src="/2018/07/29/magic/img5.png" alt="img5"></p>
 <p>通过单步发现这个call输出了结果，最终结果是magic.402218输出的，但是ida分析后发现这个函数没有判断，然后就往上找可以找到magic.402268，然后ida打开，这就找到了判断时间的关键函数</p>
 <p><img src="/2018/07/29/magic/img6.png" alt="img6"></p>
-<p>很明显，byte_405020是密钥，通过与正确的时作为种子所生成的随机数异或，然后调用另外一个函数sub_4027ED</p>
+<p>很明显，byte_405020是密钥，通过与正确的时间作为种子所生成的随机数异或，然后调用另外一个函数sub_4027ED</p>
 <p><img src="/2018/07/29/magic/img7.png" alt="img7"></p>
 <p>仔细看可以看出来，Dst是个结构体，大小为12byte，是个有256个结构体的结构体数组，结构体大概长这样</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Dst</span>&#123;</span></span><br><span class="line">    BYTE ch;</span><br><span class="line">    DWORD mem1;</span><br><span class="line">    DWORD mem2;</span><br><span class="line">&#125;;	<span class="comment">//由于对齐的原因，ch后补了3个空字节，DWORD占4个字节，所以总共是12个字节</span></span><br></pre></td></tr></table></figure>
@@ -451,11 +451,11 @@
             <div class="tab-content">
                 <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
     
-    <a href="/tags/Reverse/" style="font-size: 15.799991881539796px;" class="tag-cloud-link">Reverse</a>
+    <a href="/tags/Reverse/" style="font-size: 14.692031032163815px;" class="tag-cloud-link">Reverse</a>
     
-    <a href="/tags/writeup/" style="font-size: 12.751314884934036px;" class="tag-cloud-link">writeup</a>
+    <a href="/tags/writeup/" style="font-size: 9.37352542163125px;" class="tag-cloud-link">writeup</a>
     
-    <a href="/tags/sundry/" style="font-size: 18.926938503306538px;" class="tag-cloud-link">sundry</a>
+    <a href="/tags/sundry/" style="font-size: 9.138883917531281px;" class="tag-cloud-link">sundry</a>
     
 </div>
                 <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
