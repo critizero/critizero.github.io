@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Critizero">
+    
+    
+    
+    
+    
+    
+    <title>magic | Critizero</title>
+    <link href=”https://critizero.github.io“ rel=”prefetch” />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg,preview5.jpg,preview6.jpg,preview7.jpg,preview8.jpg,preview9.jpg,preview10.jpg,preview11.jpg,preview12.jpg,preview13.jpg,preview14.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="https://critizero.github.io">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Critizero</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/Reverse/">Reverse</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/sundry/">sundry</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/Reverse/">Reverse</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/writeup/">writeup</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/sundry/">sundry</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="https://critizero.github.io">Critizero</a>
+        >
+        <span>magic</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/07/29/magic/">magic</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Reverse/">Reverse</a>, 
+                
+                <a href="/tags/writeup/">writeup</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-07-29
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/07/29/magic/">magic</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-07-29
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/Reverse/">Reverse</a>, 
+                
+                <a href="/tags/writeup/">writeup</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>这个题调得有点久23333</p>
+<p>但是收获很大0v0</p>
+<p><a href="magic.exe">题目在此</a></p>
+<h1 id="先看看"><a href="#先看看" class="headerlink" title="先看看"></a>先看看</h1><p>直接运行有警告（<del>黑客做的东西一个都不能在实体机上打开.jpg</del></p>
+<p>命令行运行试试</p>
+<p><img src="/2018/07/29/magic/img1.png" alt="img1"></p>
+<p>看这时间就很有意思啊orz</p>
+<p>看来还得获取正确的时间</p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p>x64dbg &amp; IDA</p>
+<h1 id="漫长的调试之路"><a href="#漫长的调试之路" class="headerlink" title="漫长的调试之路"></a>漫长的调试之路</h1><p><img src="/2018/07/29/magic/img2.png" alt="img2"></p>
+<p>入口看起来就有点迷</p>
+<p>步进以后是各种系统函数的开头ntdll.xxxxxxx开头的各种调用，开始慌了，但是这些应该都是系统调用，主要看的应该是magic.xxxxx这样的才对</p>
+<p>然后就每个magic开头的调用都用ida找到对应的地址，分析一波函数，耗费无数时间和头发以后，终于来到一个奇妙的函数sub_402563，用ida看这个函数是这样子的：</p>
+<p><img src="/2018/07/29/magic/img3.png" alt="img3"></p>
+<p>这个看起来就很棒啊，看着一地的头发，我不禁陷入沉思：为什么不一开始就搜索字符串。。。</p>
+<p>然后看这判断，一看就可以写脚本跑啊，然后</p>
+<p><img src="/2018/07/29/magic/img4.png" alt="img4"></p>
+<p>呵呵，摔(╯‵□′)╯︵┻━┻</p>
+<p>对不起我这一地头发！！！</p>
+<p>算了继续。</p>
+<p>然后就接着单步，在wp的提醒下，我学会了一边看控制台一边单步，来找到关键函数。。。（我还是太菜了</p>
+<p><img src="/2018/07/29/magic/img5.png" alt="img5"></p>
+<p>通过单步发现这个call输出了结果，最终结果是magic.402218输出的，但是ida分析后发现这个函数没有判断，然后就往上找可以找到magic.402268，然后ida打开，这就找到了判断时间的关键函数</p>
+<p><img src="/2018/07/29/magic/img6.png" alt="img6"></p>
+<p>很明显，byte_405020是密钥，通过与正确的时作为种子所生成的随机数异或，然后调用另外一个函数sub_4027ED</p>
+<p><img src="/2018/07/29/magic/img7.png" alt="img7"></p>
+<p>仔细看可以看出来，Dst是个结构体，大小为12byte，是个有256个结构体的结构体数组，结构体大概长这样</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Dst</span>&#123;</span></span><br><span class="line">    BYTE ch;</span><br><span class="line">    DWORD mem1;</span><br><span class="line">    DWORD mem2;</span><br><span class="line">&#125;;	<span class="comment">//由于对齐的原因，ch后补了3个空字节，DWORD占4个字节，所以总共是12个字节</span></span><br></pre></td></tr></table></figure>
+<p>对于每个结构体，ch被赋值为相应的异或后的结果，mem1赋值为0x7FFFFFFF，mem2赋值为0，然后就进入下个函数</p>
+<p>还可以通过查看栈的位置，发现v2和v1其实分别是Dst[255]的mem1和mem2的值</p>
+<p>sub_4026D0就是个对结构体的处理函数，于是就可以总结一哈：</p>
+<ul>
+<li>时间在 0x5AFFE78F~0x5B028A8F 之间，并作为随机数种子</li>
+<li>通过与一个字符数组的序列进行异或，生成一个结构体数组</li>
+<li>结构体数组进行操作，可以得到v1、v2的值</li>
+<li>v2的值实际上是Dst[255].mem1，并且应该等于0x700</li>
+</ul>
+<p>于是，有了这些，就可以愉快的写脚本爆破了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">char</span> sngl;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Ele</span>&#123;</span></span><br><span class="line">	<span class="keyword">char</span> byte;			<span class="comment">//由于最开始写的时候把byte的类型设置为unsigned char</span></span><br><span class="line">	<span class="keyword">int</span> mem1;			<span class="comment">//硬是跑出包含正确种子在内的21个种子。。。</span></span><br><span class="line">	<span class="keyword">int</span> mem2;			<span class="comment">//无法接受.jpg</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">sngl aim_table[]=&#123;</span><br><span class="line"><span class="number">0x58</span>,<span class="number">0x71</span>,<span class="number">0x8F</span>,<span class="number">0x32</span>,<span class="number">0x05</span>,<span class="number">0x06</span>,<span class="number">0x51</span>,<span class="number">0xC7</span>,<span class="number">0xA7</span>,<span class="number">0xF8</span>,<span class="number">0x3A</span>,</span><br><span class="line"><span class="number">0xE1</span>,<span class="number">0x06</span>,<span class="number">0x48</span>,<span class="number">0x82</span>,<span class="number">0x09</span>,<span class="number">0xA1</span>,<span class="number">0x12</span>,<span class="number">0x9F</span>,<span class="number">0x7C</span>,<span class="number">0xB8</span>,<span class="number">0x2A</span>,</span><br><span class="line"><span class="number">0x6F</span>,<span class="number">0x95</span>,<span class="number">0xFD</span>,<span class="number">0xD0</span>,<span class="number">0x67</span>,<span class="number">0xC8</span>,<span class="number">0xE3</span>,<span class="number">0xCE</span>,<span class="number">0xAB</span>,<span class="number">0x12</span>,<span class="number">0x1F</span>,</span><br><span class="line"><span class="number">0x98</span>,<span class="number">0x6B</span>,<span class="number">0x14</span>,<span class="number">0xEA</span>,<span class="number">0x89</span>,<span class="number">0x90</span>,<span class="number">0x21</span>,<span class="number">0x2D</span>,<span class="number">0xFD</span>,<span class="number">0x9A</span>,<span class="number">0xBB</span>,</span><br><span class="line"><span class="number">0x47</span>,<span class="number">0xCC</span>,<span class="number">0xEA</span>,<span class="number">0x9C</span>,<span class="number">0xD7</span>,<span class="number">0x50</span>,<span class="number">0x27</span>,<span class="number">0xAF</span>,<span class="number">0xB9</span>,<span class="number">0x77</span>,<span class="number">0xDF</span>,</span><br><span class="line"><span class="number">0xC5</span>,<span class="number">0xE9</span>,<span class="number">0xE1</span>,<span class="number">0x50</span>,<span class="number">0xD3</span>,<span class="number">0x38</span>,<span class="number">0x89</span>,<span class="number">0xEF</span>,<span class="number">0x2D</span>,<span class="number">0x72</span>,<span class="number">0xC2</span>,</span><br><span class="line"><span class="number">0xDF</span>,<span class="number">0xF3</span>,<span class="number">0x7D</span>,<span class="number">0x7D</span>,<span class="number">0x65</span>,<span class="number">0x95</span>,<span class="number">0xED</span>,<span class="number">0x13</span>,<span class="number">0x00</span>,<span class="number">0x1C</span>,<span class="number">0xA3</span>,</span><br><span class="line"><span class="number">0x3C</span>,<span class="number">0xE3</span>,<span class="number">0x57</span>,<span class="number">0xE3</span>,<span class="number">0xF7</span>,<span class="number">0xF7</span>,<span class="number">0x2C</span>,<span class="number">0x73</span>,<span class="number">0x88</span>,<span class="number">0x34</span>,<span class="number">0xB1</span>,</span><br><span class="line"><span class="number">0x62</span>,<span class="number">0xD3</span>,<span class="number">0x37</span>,<span class="number">0x19</span>,<span class="number">0x26</span>,<span class="number">0xBE</span>,<span class="number">0xB2</span>,<span class="number">0x33</span>,<span class="number">0x20</span>,<span class="number">0x3F</span>,<span class="number">0x60</span>,</span><br><span class="line"><span class="number">0x39</span>,<span class="number">0x87</span>,<span class="number">0xA6</span>,<span class="number">0x65</span>,<span class="number">0xAD</span>,<span class="number">0x73</span>,<span class="number">0x1A</span>,<span class="number">0x6D</span>,<span class="number">0x49</span>,<span class="number">0x33</span>,<span class="number">0x49</span>,</span><br><span class="line"><span class="number">0xC0</span>,<span class="number">0x56</span>,<span class="number">0x00</span>,<span class="number">0xBE</span>,<span class="number">0x0A</span>,<span class="number">0xCF</span>,<span class="number">0x28</span>,<span class="number">0x7E</span>,<span class="number">0x8E</span>,<span class="number">0x69</span>,<span class="number">0x87</span>,</span><br><span class="line"><span class="number">0xE1</span>,<span class="number">0x05</span>,<span class="number">0x88</span>,<span class="number">0xDA</span>,<span class="number">0x54</span>,<span class="number">0x3E</span>,<span class="number">0x3C</span>,<span class="number">0x0E</span>,<span class="number">0xA9</span>,<span class="number">0xFA</span>,<span class="number">0xD7</span>,</span><br><span class="line"><span class="number">0x7F</span>,<span class="number">0x4E</span>,<span class="number">0x44</span>,<span class="number">0xC6</span>,<span class="number">0x9A</span>,<span class="number">0x0A</span>,<span class="number">0xD2</span>,<span class="number">0x98</span>,<span class="number">0x6A</span>,<span class="number">0xA4</span>,<span class="number">0x19</span>,</span><br><span class="line"><span class="number">0x6D</span>,<span class="number">0x8C</span>,<span class="number">0xE1</span>,<span class="number">0xF9</span>,<span class="number">0x30</span>,<span class="number">0xE5</span>,<span class="number">0xFF</span>,<span class="number">0x33</span>,<span class="number">0x4A</span>,<span class="number">0xA9</span>,<span class="number">0x52</span>,</span><br><span class="line"><span class="number">0x3A</span>,<span class="number">0x0D</span>,<span class="number">0x67</span>,<span class="number">0x20</span>,<span class="number">0x1D</span>,<span class="number">0xBF</span>,<span class="number">0x36</span>,<span class="number">0x3E</span>,<span class="number">0xE8</span>,<span class="number">0x56</span>,<span class="number">0xBF</span>,</span><br><span class="line"><span class="number">0x5A</span>,<span class="number">0x88</span>,<span class="number">0xA8</span>,<span class="number">0x69</span>,<span class="number">0xD6</span>,<span class="number">0xAB</span>,<span class="number">0x52</span>,<span class="number">0xF1</span>,<span class="number">0x14</span>,<span class="number">0xF2</span>,<span class="number">0xD7</span>,</span><br><span class="line"><span class="number">0xEF</span>,<span class="number">0x92</span>,<span class="number">0xF7</span>,<span class="number">0xA0</span>,<span class="number">0x70</span>,<span class="number">0xA1</span>,<span class="number">0xEF</span>,<span class="number">0xE3</span>,<span class="number">0x1F</span>,<span class="number">0x66</span>,<span class="number">0x2B</span>,</span><br><span class="line"><span class="number">0x97</span>,<span class="number">0xF6</span>,<span class="number">0x2B</span>,<span class="number">0x30</span>,<span class="number">0x0F</span>,<span class="number">0xB0</span>,<span class="number">0xB4</span>,<span class="number">0xC0</span>,<span class="number">0xFE</span>,<span class="number">0xA6</span>,<span class="number">0x62</span>,</span><br><span class="line"><span class="number">0xFD</span>,<span class="number">0xE6</span>,<span class="number">0x4C</span>,<span class="number">0x39</span>,<span class="number">0xCF</span>,<span class="number">0x20</span>,<span class="number">0xB3</span>,<span class="number">0x10</span>,<span class="number">0x60</span>,<span class="number">0x9F</span>,<span class="number">0x34</span>,</span><br><span class="line"><span class="number">0xBE</span>,<span class="number">0xB2</span>,<span class="number">0x1C</span>,<span class="number">0x3B</span>,<span class="number">0x6B</span>,<span class="number">0x1D</span>,<span class="number">0xDF</span>,<span class="number">0x53</span>,<span class="number">0x72</span>,<span class="number">0xF2</span>,<span class="number">0xFA</span>,</span><br><span class="line"><span class="number">0xB1</span>,<span class="number">0x51</span>,<span class="number">0x82</span>,<span class="number">0x04</span>,<span class="number">0x30</span>,<span class="number">0x56</span>,<span class="number">0x1F</span>,<span class="number">0x37</span>,<span class="number">0x72</span>,<span class="number">0x7A</span>,<span class="number">0x97</span>,</span><br><span class="line"><span class="number">0x50</span>,<span class="number">0x29</span>,<span class="number">0x86</span>,<span class="number">0x4A</span>,<span class="number">0x09</span>,<span class="number">0x3C</span>,<span class="number">0x59</span>,<span class="number">0xC4</span>,<span class="number">0x41</span>,<span class="number">0x71</span>,<span class="number">0xF8</span>,</span><br><span class="line"><span class="number">0x1A</span>,<span class="number">0xD2</span>,<span class="number">0x30</span>,<span class="number">0x88</span>,<span class="number">0x63</span>,<span class="number">0xFF</span>,<span class="number">0x85</span>,<span class="number">0xDE</span>,<span class="number">0x24</span>,<span class="number">0x8C</span>,<span class="number">0xC3</span>,</span><br><span class="line"><span class="number">0x37</span>,<span class="number">0x14</span>,<span class="number">0xC7</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Ele *<span class="title">check</span><span class="params">(Ele *_struct,<span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Ele *result = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span>(index &gt;= <span class="number">0</span> &amp;&amp; index &lt;= <span class="number">255</span>)</span><br><span class="line">		result = &amp;_struct[index];</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">memset</span>(result, <span class="number">0</span> ,<span class="keyword">sizeof</span>(result));</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">(Ele *dst,<span class="keyword">int</span> idx)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Ele *result = <span class="literal">NULL</span>;</span><br><span class="line">	Ele *v3 = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span> v4;</span><br><span class="line">	Ele *v5 = <span class="literal">NULL</span>;</span><br><span class="line">	Ele *v6 = <span class="literal">NULL</span>;</span><br><span class="line">	Ele *v7 = <span class="literal">NULL</span>;</span><br><span class="line">	Ele *v8 = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> index;</span><br><span class="line">	</span><br><span class="line">	v8 = dst;</span><br><span class="line">	index = idx;</span><br><span class="line">	result = check(v8,idx);</span><br><span class="line">	v7 = result;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(result)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(index &amp; <span class="number">0xF</span>)</span><br><span class="line">			v3 = check(v8,index<span class="number">-0x1</span>);</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			v3 = <span class="number">0x0</span>;</span><br><span class="line">		v6 = v3;</span><br><span class="line">		<span class="keyword">if</span>(index + <span class="number">0xF</span> &lt;= <span class="number">0x1E</span>)</span><br><span class="line">			result = <span class="number">0x0</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			result = check(v8,index - <span class="number">0x10</span>);</span><br><span class="line">		v5 = result;</span><br><span class="line">		<span class="keyword">if</span>(v6 || result)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(v6)</span><br><span class="line">			&#123;</span><br><span class="line">				v7-&gt;mem1 = v7-&gt;byte + v6-&gt;mem1;</span><br><span class="line">				result = v7;</span><br><span class="line">				v7-&gt;mem2 = <span class="number">2</span> * v6-&gt;mem2;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(v5)</span><br><span class="line">			&#123;</span><br><span class="line">				v4 = v5-&gt;mem1 + v7-&gt;byte;</span><br><span class="line">				<span class="keyword">if</span>(v4 &lt; v7-&gt;mem1)</span><br><span class="line">				&#123;</span><br><span class="line">					v7-&gt;mem1 = v4;</span><br><span class="line">					result = v7;</span><br><span class="line">					v7-&gt;mem2 = <span class="number">2</span> * v5-&gt;mem2 | <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			result = v7;</span><br><span class="line">			v7-&gt;mem1 = v7-&gt;byte;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">calculate</span><span class="params">(sngl str[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Ele *Dst;</span><br><span class="line">	Dst = (Ele *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(Ele)*<span class="number">0x100</span>);</span><br><span class="line">	<span class="built_in">memset</span>(Dst,<span class="number">0</span>,<span class="number">0xC00</span>);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt;= <span class="number">255</span> ; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Dst[i].byte = str[i];</span><br><span class="line">		Dst[i].mem1 = <span class="number">0x7FFFFFFF</span>;</span><br><span class="line">		Dst[i].mem2 = <span class="number">0</span>;</span><br><span class="line">		work(Dst,i);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(Dst[<span class="number">255</span>].mem1 == <span class="number">0x700</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> time;</span><br><span class="line">	<span class="keyword">int</span> cas = <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(time = <span class="number">0x5AFFE790</span> ; time &lt; <span class="number">0x5B028A8F</span> ; time ++)</span><br><span class="line">	&#123;</span><br><span class="line">		srand(time);</span><br><span class="line">		sngl table[<span class="number">256</span>];</span><br><span class="line">		<span class="built_in">memcpy</span>(table,aim_table,<span class="number">256</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= <span class="number">255</span> ; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			table[i] ^= rand();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(calculate(table))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0x%x"</span>,time);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;			<span class="comment">//可以得到时间是0x5B00E398</span></span><br></pre></td></tr></table></figure>
+<p>然后就在magic._time64调用完后修改返回值</p>
+<p>然后就单步，会找到一个需要输入的函数sub_4023B1，这里用到了回调的机制，真是打开了新世界的大门</p>
+<p>依旧ida打开</p>
+<p><img src="/2018/07/29/magic/img8.png" alt="img8"></p>
+<p>可以看到输入是26个字符，然后对输入进行加密（我修改过函数名）然后一个判断，通过了以后再对加密串进行加密（可以猜测加密是异或之类的可以两次加密复原的那种），然后分析encode，发现确实是通过异或加密的。</p>
+<p>然后再看sub_4029C7这个判断函数（只截了一部分）</p>
+<p><img src="/2018/07/29/magic/img9.png" alt="img9"></p>
+<p>看起来贼复杂（其实做起来也很复杂。。。<del>啊我的头发</del></p>
+<p>这里用到了setjmp和longjmp，大致上算是goto的升级版</p>
+<p>其实相当于汇编机器码一样的，ins_table里存的就相当于指令，根据指令一个个进行操作，简化以后是这样</p>
+<p><img src="/2018/07/29/magic/ex_img1.png" alt="ex_img1"></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> arg = <span class="number">0x66</span>;</span><br><span class="line">ch += <span class="number">0xCC</span>;</span><br><span class="line">ch &amp;= <span class="number">0xFF</span>;</span><br><span class="line">ch ^= arg;</span><br><span class="line">arg = ~ arg;</span><br></pre></td></tr></table></figure>
+<p>由于密文也已经知道（key_word)就可以进行爆破正确的加密后的密文了（正确的输入没必要跑，因为可以通过程序自动第二次加密得到:P</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> keyboard[]=&#123;</span><br><span class="line"><span class="number">0x89</span> ,<span class="number">0xC1</span> ,<span class="number">0xEC</span> ,<span class="number">0x50</span> ,<span class="number">0x97</span> ,<span class="number">0x3A</span> ,<span class="number">0x57</span> ,<span class="number">0x59</span> ,<span class="number">0xE4</span> ,<span class="number">0xE6</span> ,<span class="number">0xE4</span> ,<span class="number">0x42</span> ,<span class="number">0xCB</span>,</span><br><span class="line"><span class="number">0xD9</span> ,<span class="number">0x08</span> ,<span class="number">0x22</span> ,<span class="number">0xAE</span> ,<span class="number">0x9D</span> ,<span class="number">0x7C</span> ,<span class="number">0x07</span> ,<span class="number">0x80</span> ,<span class="number">0x8F</span> ,<span class="number">0x1B</span> ,<span class="number">0x45</span> ,<span class="number">0x04</span> ,<span class="number">0xE8</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> ans[<span class="number">26</span>];</span><br><span class="line">	<span class="keyword">int</span> arg[<span class="number">2</span>] = &#123;<span class="number">0x66</span>,<span class="number">0x99</span>&#125;;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span> ;i &lt; <span class="number">26</span> ; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j;</span><br><span class="line">		<span class="keyword">int</span> ch;</span><br><span class="line">		<span class="keyword">for</span>(j = <span class="number">0x00</span>;j &lt; <span class="number">0xFF</span> ; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			ch = j;</span><br><span class="line">			ch += <span class="number">0xCC</span>;</span><br><span class="line">			ch &amp;= <span class="number">0xFF</span>;</span><br><span class="line">			ch ^= arg[i%<span class="number">2</span>];</span><br><span class="line">			<span class="keyword">if</span>(ch == keyboard[i])</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%02x"</span>,j);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	<span class="comment">//238cbefd25d765f4b6b3b60fe174a2effc384ed21a4ab11096a5 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后就在第一次加密后，将对应的内存修改为得到的字串</p>
+<p><img src="/2018/07/29/magic/img10.png" alt="img10"></p>
+<p>然后这时候就有神秘的情况出现，这是错误输入没有的</p>
+<p><img src="/2018/07/29/magic/img11.png" alt="img11"></p>
+<p>通过对比和分析机器码可以猜测，这个操作不重要，于是可以把出现除0的地方改成除1，由于除数也是机器码里的，所以直接通过修改内存就可以</p>
+<p>然后继续步过，当再次通过加密函数的时候，可以看见内存里之前修改的部分已经变成了一半的flag。。。</p>
+<p><img src="/2018/07/29/magic/img12.png" alt="img12"></p>
+<p>然后注意控制台黑框框，继续步过</p>
+<p>然后就能得到完整的输出</p>
+<p><img src="/2018/07/29/magic/img13.png" alt="img13"></p>
+<p>可以得到完整的flag是rctf{h@ck_For_fun_02508iO2_2iOR}</p>
+<p>前面一部分可以通过眯眼看出来23333，像我就不一样，我取下眼镜就能直接看出来2333333</p>
+<p>要不比划一下？</p>
+<p><img src="/2018/07/29/magic/img14.png" alt="img14"></p>
+<h1 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h1><p>这次的题目，我学到了挺多东西的，或许说是更熟练了（<del>白学家gunna</del></p>
+<ul>
+<li>对x64dbg这个工具用的更熟练了，毕竟调了快20个小时233333发现了之前没有用到过的操作</li>
+<li>碰到了回调函数，知道了这种机制，以后碰到就有了方向</li>
+<li>感受到了windows下逆向的便捷，x86dbg和ida一起用起来如有神助（然而这和我是个菜鸡有什么关系呢.jpg</li>
+<li>学到了setjmp()和longjmp()的操作</li>
+<li>看到了结构体在内存中的存储方式</li>
+<li>又一次分析了模拟计算机机器码的操作，下次碰到争取不慌XD</li>
+</ul>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            Critizero
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/29/magic/">magic</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/09/babyre/">babyre</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/09/Reverse/">Reverse</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/08/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/09/babyre/">babyre</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/09/Reverse/">Reverse</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/08/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/07/29/magic/">magic</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/07/29/magic/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/07/29/magic/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/07/29/magic/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/Reverse/" style="font-size: 15.799991881539796px;" class="tag-cloud-link">Reverse</a>
+    
+    <a href="/tags/writeup/" style="font-size: 12.751314884934036px;" class="tag-cloud-link">writeup</a>
+    
+    <a href="/tags/sundry/" style="font-size: 18.926938503306538px;" class="tag-cloud-link">sundry</a>
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="https://blog.codgician.pw/" target="_blank">codgician</a>
+    </li>
+    
+    <li>
+        <a href="https://github.com/fangdada/" target="_blank">fanda</a>
+    </li>
+    
+    <li>
+        <a href="https://www.xctf.org.cn" target="_blank">X-CTF社区</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/critizero" target="_blank">Github</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 Critizero Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+</html>
