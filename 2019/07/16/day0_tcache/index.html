@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="Critizero&#39;s">
 <meta property="og:description" content="嘛，本来是暑假一开始就准备的企划orz，然后短学期之前的部分没记录23333。整个记录顺便防止自己整日荒废然后比赛暴毙orz。这个系列都是堆相关的漏洞利用，主要参考资料是ctf-wiki，以及询问大佬。。。哈吉马路哟">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-17T13:44:33.381Z">
+<meta property="og:updated_time" content="2019-07-17T13:47:37.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day 0 - tcache">
 <meta name="twitter:description" content="嘛，本来是暑假一开始就准备的企划orz，然后短学期之前的部分没记录23333。整个记录顺便防止自己整日荒废然后比赛暴毙orz。这个系列都是堆相关的漏洞利用，主要参考资料是ctf-wiki，以及询问大佬。。。哈吉马路哟">
@@ -417,7 +417,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-17 21:44:33" itemprop="dateModified" datetime="2019-07-17T21:44:33+08:00">2019-07-17</time>
+                <time title="修改时间：2019-07-17 21:47:37" itemprop="dateModified" datetime="2019-07-17T21:47:37+08:00">2019-07-17</time>
               
             
           </span>
@@ -473,7 +473,7 @@
 <a id="more"></a>
 <blockquote>
 <p>参考资料</p>
-<p>ctf-wiki</p>
+<p><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/glibc-heap/tcache_attack-zh/" target="_blank" rel="noopener">ctf-wiki</a></p>
 </blockquote>
 <h1 id="TCACHE"><a href="#TCACHE" class="headerlink" title="TCACHE"></a>TCACHE</h1><p>tcache是glibc2.26以后新加入的机制。从名字来看是一个类似内存的cache那样的加速的东西。系统为每个线程增加bin缓存，默认情况下，每个线程有64个bins，大小从24（32位下12），以16（32位下8）递增至1032（32位下516）。每个bins默认最多容纳7个chunk。</p>
 <p>tcache对chunk的检查很少，难怪wiki上有一句“tcache makes heap exploitation easy again”。</p>
