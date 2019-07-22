@@ -130,27 +130,25 @@
 
 
 
-  <meta name="description" content="ctf萌新报道！ 开这个blog是为了记录我写不出来和没过的题，顺便写点总结啥的">
-<meta name="keywords" content="sundry">
+  <meta name="description" content="今天第四天啦，继续加油orz。这几天先把几种基本的堆的利用方式学学吧。">
+<meta name="keywords" content="pwn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://critizero.github.io/2018/07/08/hello-world/index.html">
+<meta property="og:title" content="Day3 - Fastbin Attack">
+<meta property="og:url" content="https://critizero.github.io/2019/07/19/day3_fastbin_attack/index.html">
 <meta property="og:site_name" content="Critizero&#39;s">
-<meta property="og:description" content="ctf萌新报道！ 开这个blog是为了记录我写不出来和没过的题，顺便写点总结啥的">
+<meta property="og:description" content="今天第四天啦，继续加油orz。这几天先把几种基本的堆的利用方式学学吧。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://critizero.github.io/2018/07/08/hello-world/img1.jpg">
-<meta property="og:updated_time" content="2019-03-04T16:42:36.874Z">
+<meta property="og:updated_time" content="2019-07-19T10:30:25.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="ctf萌新报道！ 开这个blog是为了记录我写不出来和没过的题，顺便写点总结啥的">
-<meta name="twitter:image" content="https://critizero.github.io/2018/07/08/hello-world/img1.jpg">
+<meta name="twitter:title" content="Day3 - Fastbin Attack">
+<meta name="twitter:description" content="今天第四天啦，继续加油orz。这几天先把几种基本的堆的利用方式学学吧。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://critizero.github.io/2018/07/08/hello-world/"/>
+  <link rel="canonical" href="https://critizero.github.io/2019/07/19/day3_fastbin_attack/"/>
 
 
 
@@ -160,7 +158,7 @@
   };
 </script>
 
-  <title>Hello World | Critizero's</title>
+  <title>Day3 - Fastbin Attack | Critizero's</title>
   
 
 
@@ -359,7 +357,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://critizero.github.io/2018/07/08/hello-world/"/>
+    <link itemprop="mainEntityOfPage" href="https://critizero.github.io/2019/07/19/day3_fastbin_attack/"/>
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Critizero"/>
@@ -376,7 +374,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">Day3 - Fastbin Attack
 
               
             
@@ -402,24 +400,12 @@
                 
               
 
-              <time title="创建时间：2018-07-08 21:54:10" itemprop="dateCreated datePublished" datetime="2018-07-08T21:54:10+08:00">2018-07-08</time>
+              <time title="创建时间：2019-07-19 17:14:33 / 修改时间：18:30:25" itemprop="dateCreated datePublished" datetime="2019-07-19T17:14:33+08:00">2019-07-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-05 00:42:36" itemprop="dateModified" datetime="2019-03-05T00:42:36+08:00">2019-03-05</time>
               
             
           </span>
@@ -436,7 +422,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Sundry/" itemprop="url" rel="index"><span itemprop="name">Sundry</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CTF/" itemprop="url" rel="index"><span itemprop="name">CTF</span></a></span>
 
                 
                 
@@ -471,13 +457,49 @@
       
 
       
-        <p>ctf萌新报道！</p>
-<p>开这个blog是为了记录我写<del>不出来和没</del>过的题，顺便写点总结啥的</p>
+        <p>今天第四天啦，继续加油orz。这几天先把几种基本的堆的利用方式学学吧。</p>
 <a id="more"></a>
-<p>十分感谢 <a href="https://blog.codgician.pw/" target="_blank" rel="noopener">codgician</a> 大佬的无私帮助，才能顺利搭好这个blog~ %%%%%%%</p>
-<p>就跟每个语言的初学者的第一份代码一样</p>
-<h1 id="Hello-World！"><a href="#Hello-World！" class="headerlink" title="Hello World！"></a>Hello World！</h1><p>Hello world~</p>
-<p><img src="/2018/07/08/hello-world/img1.jpg" alt="img1"></p>
+<blockquote>
+<p>参考资料</p>
+<p><a href="https://ctf-wiki.github.io/ctf-wiki/pwn/linux/glibc-heap/fastbin_attack-zh/" target="_blank" rel="noopener">CTF Wiki</a></p>
+</blockquote>
+<p>Fastbin Attack是基于fastbin的一类漏洞利用的方法，这些利用有一些前提：</p>
+<ul>
+<li>有堆溢出，uaf等漏洞，可以控制chunk内容</li>
+<li>漏洞发生在fastbin类型的chunk之中</li>
+</ul>
+<p>漏洞主要原理在于Fastbin是通过单链表管理的，并且释放fastbin的chunk的时候不会清空next chunk的pre_in_use位。</p>
+<h1 id="Fastbin-Double-Free"><a href="#Fastbin-Double-Free" class="headerlink" title="Fastbin Double Free"></a>Fastbin Double Free</h1><p>Fastbin Double Free是指fastbin的chunk可以被多次释放，导致同一个chunk可以在fastbin链表中多次存在。这样分配的时候就可以实现多个指针指向同一个堆块，这样，根据不同指针对于堆块内容的用处不用，就能实现类型混淆的效果</p>
+<p>这个方法可以成功有两个原因：</p>
+<ul>
+<li>堆块被释放后没用清空next chunk的pre_in_use位</li>
+<li>fastbin在进行free的时候只检查main_arena直接指向的块，对于之后的块并没有检查。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">void</span> *chunk1, *chunk2;</span><br><span class="line">    chunk1 = <span class="built_in">malloc</span>(<span class="number">0x10</span>);</span><br><span class="line">    chunk2 = <span class="built_in">malloc</span>(<span class="number">0x10</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">free</span>(chunk1);</span><br><span class="line">    <span class="built_in">free</span>(chunk2);</span><br><span class="line">    <span class="built_in">free</span>(chunk1);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>free(chunk1)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+--------------+      +----------+</span><br><span class="line">|  main_arena  | ---&gt; |  chunk1  |</span><br><span class="line">+--------------+      +----------+</span><br></pre></td></tr></table></figure>
+<p>free(chunk2)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+--------------+      +----------+      +----------+</span><br><span class="line">|  main_arena  | ---&gt; |  chunk2  | ---&gt; |  chunk1  |</span><br><span class="line">+--------------+      +----------+      +----------+</span><br></pre></td></tr></table></figure>
+<p>free(chunk3)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+--------------+      +----------+      +----------+      +----------+</span><br><span class="line">|  main_arena  | ---&gt; |  chunk1  | ---&gt; |  chunk2  | ---&gt; |  chunk1  |----</span><br><span class="line">+--------------+      +----------+      +----------+      +----------+   |</span><br><span class="line">                                        ^--------------------------------|</span><br></pre></td></tr></table></figure>
+<p>这样free在第三次释放后fd的值不为0而是指向chunk2</p>
+<p>如果在这时，我们能够控制chunk1的内容，就可以改写fd从而在我们想要的的地址分配fastbin块（要注意大小必须和该fastbin链表的大小一致）。从而实现任意地址写。</p>
+<h1 id="House-Of-Spirit"><a href="#House-Of-Spirit" class="headerlink" title="House Of Spirit"></a>House Of Spirit</h1><p>这个就是通过控制目标区域前后的内容，伪造一个假的chunk，然后将这块内存释放掉，再分配回来，就能控制目标区域的内容了。</p>
+<p>要注意一些检测</p>
+<ul>
+<li>fake chunk的ISMMAP位不能位1，因为会被特殊处理</li>
+<li>fake chunk的地址要对齐，MALLOC_ALIGN_MASK</li>
+<li>fake chunk的大小要满足对应fastbin的需求</li>
+<li>fake chunk的next chunk大小不能小于<code>2*SIZE_SZ</code>，同时也不能大于<code>av-&gt;system_mem</code></li>
+<li>fake chunk对用的fastbin链表头部不能使该fake chunk（不能double free）</li>
+</ul>
+<p>具体利用之前写过了，下次复习orz</p>
+<h1 id="Alloc-to-Stack"><a href="#Alloc-to-Stack" class="headerlink" title="Alloc to Stack"></a>Alloc to Stack</h1><p>这个比较好理解</p>
+<p>通过在栈上伪造fake chunk，然后通过修改在fastbin链表中的chunk的fd指针指向fake chunk，就能把栈上的fake chunk分配出来，然后控制一些关键数据。注意栈上的fakechunk需要又满足条件的size值。</p>
+<h1 id="Arbitrary-Alloc"><a href="#Arbitrary-Alloc" class="headerlink" title="Arbitrary Alloc"></a>Arbitrary Alloc</h1><p>这个跟上一个一样，只是不局限在栈上，任何满足条件的size域，都可以成为被分配的块。</p>
+<p>可以使用字节错位来寻找满足条件的size，然后在fastbin构造一个相同组的chunk，通过修改该chunk的fd，就能分配到该目标块了。</p>
+<h1 id="栗子"><a href="#栗子" class="headerlink" title="栗子"></a>栗子</h1><h2 id="Search-Engine"><a href="#Search-Engine" class="headerlink" title="Search Engine"></a>Search Engine</h2><p>首先康康保护</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> checksec search </span><br><span class="line">[*] '/home/critiz/Desktop/search'</span><br><span class="line">    Arch:     amd64-64-little</span><br><span class="line">    RELRO:    Partial RELRO</span><br><span class="line">    Stack:    Canary found</span><br><span class="line">    NX:       NX enabled</span><br><span class="line">    PIE:      No PIE</span><br><span class="line">    FORTIFY:  Enabled</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -501,7 +523,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/sundry/" rel="tag"># sundry</a>
+            <a href="/tags/pwn/" rel="tag"># pwn</a>
           
         </div>
       
@@ -514,14 +536,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/18/day2_exercise/" rel="next" title="Day2 - 一些pwn题">
+                <i class="fa fa-chevron-left"></i> Day2 - 一些pwn题
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/09/Reverse/" rel="prev" title="Reverse">
-                Reverse <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/20/day4_unsortedbin_attack/" rel="prev" title="Day4 - Unsorted Bin Attack">
+                Day4 - Unsorted Bin Attack <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -738,7 +764,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hello-World！"><span class="nav-number">1.</span> <span class="nav-text">Hello World！</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Fastbin-Double-Free"><span class="nav-number">1.</span> <span class="nav-text">Fastbin Double Free</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#House-Of-Spirit"><span class="nav-number">2.</span> <span class="nav-text">House Of Spirit</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Alloc-to-Stack"><span class="nav-number">3.</span> <span class="nav-text">Alloc to Stack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arbitrary-Alloc"><span class="nav-number">4.</span> <span class="nav-text">Arbitrary Alloc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栗子"><span class="nav-number">5.</span> <span class="nav-text">栗子</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Search-Engine"><span class="nav-number">5.1.</span> <span class="nav-text">Search Engine</span></a></li></ol></li></ol></div>
             
 
           </div>
