@@ -138,12 +138,12 @@
 <meta property="og:site_name" content="Critizero&#39;s">
 <meta property="og:description" content="恕我直言，周五的比赛。。。都是在针对要上课的人orz边听课边做题真的无法专心做题23333，虽然也因为太菜了，课上连double free都没反应过来怎么利用。。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://119.29.111.48/images/repetition_shuzijingjiyunanquan/1.png">
-<meta property="og:updated_time" content="2019-09-25T10:14:08.298Z">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/iXuZMcd6kGIq7mA.png">
+<meta property="og:updated_time" content="2020-01-17T06:57:24.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数字经济云安全pwn题复现">
 <meta name="twitter:description" content="恕我直言，周五的比赛。。。都是在针对要上课的人orz边听课边做题真的无法专心做题23333，虽然也因为太菜了，课上连double free都没反应过来怎么利用。。。">
-<meta name="twitter:image" content="http://119.29.111.48/images/repetition_shuzijingjiyunanquan/1.png">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/17/iXuZMcd6kGIq7mA.png">
 
 
 
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-25 18:14:08" itemprop="dateModified" datetime="2019-09-25T18:14:08+08:00">2019-09-25</time>
+                <time title="修改时间：2020-01-17 14:57:24" itemprop="dateModified" datetime="2020-01-17T14:57:24+08:00">2020-01-17</time>
               
             
           </span>
@@ -503,7 +503,7 @@
 </blockquote>
 <h2 id="审查-1"><a href="#审查-1" class="headerlink" title="审查"></a>审查</h2><p>第一次写跟IO_File相关的题orz，最近得找个时间把FSOP学了才行。不然感觉越来越多的题目用到IO_File就完全动不了orz</p>
 <p>程序是一个传统的目录型文件，保护全开，但是没有输出功能。</p>
-<p><img src="http://119.29.111.48/images/repetition_shuzijingjiyunanquan/1.png" style="zoom:50%"></p>
+<p><img src="https://i.loli.net/2020/01/17/iXuZMcd6kGIq7mA.png" alt="1.png" style="zoom:50%;"></p>
 <p>程序有两个漏洞，一个是free的时候有悬挂指针，可以用来<code>double free</code>制造任意地址分配。还有一个是edit功能没有限制长度，导致任意长度的溢出，这个就方便我们uaf。</p>
 <p>现在重要的问题就在于，没得输出，一般情况下，这时应该借助stdout文件输出，但是程序开了PIE，无法轻易得到<code>stdout</code>的地址。那咋办嘛.jpg</p>
 <p>显然，我们可以知道，再unsorted bin中chunk的fd字段会设置成<code>main_arena</code>相关的值，这样的话~我们就可以通过部分覆盖，使之指向stdout部分去，然后讲stdout部分malloc出来，这样，就能泄露libc的地址啦。</p>
@@ -835,7 +835,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

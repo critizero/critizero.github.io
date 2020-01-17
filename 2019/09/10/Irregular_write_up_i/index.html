@@ -138,12 +138,12 @@
 <meta property="og:site_name" content="Critizero&#39;s">
 <meta property="og:description" content="不知不觉，好像又鸽了快一个月没更新了2333虽说开学但是其实好像也没有很忙，可能就是一直在摸鱼。。。吧">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://119.29.111.48/images/Irregular_write_up_2/1.png">
-<meta property="og:updated_time" content="2019-09-09T17:03:38.428Z">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/OnCDsviRfx2JPtz.png">
+<meta property="og:updated_time" content="2020-01-17T06:48:39.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不定期更新的WP-2">
 <meta name="twitter:description" content="不知不觉，好像又鸽了快一个月没更新了2333虽说开学但是其实好像也没有很忙，可能就是一直在摸鱼。。。吧">
-<meta name="twitter:image" content="http://119.29.111.48/images/Irregular_write_up_2/1.png">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/17/OnCDsviRfx2JPtz.png">
 
 
 
@@ -402,12 +402,24 @@
                 
               
 
-              <time title="创建时间：2019-09-10 00:31:26 / 修改时间：01:03:38" itemprop="dateCreated datePublished" datetime="2019-09-10T00:31:26+08:00">2019-09-10</time>
+              <time title="创建时间：2019-09-10 00:31:26" itemprop="dateCreated datePublished" datetime="2019-09-10T00:31:26+08:00">2019-09-10</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-01-17 14:48:39" itemprop="dateModified" datetime="2020-01-17T14:48:39+08:00">2020-01-17</time>
               
             
           </span>
@@ -497,7 +509,7 @@
 <h3 id="利用"><a href="#利用" class="headerlink" title="利用"></a>利用</h3><p>由于无法通过修改指针来改写值，所以只能使用别的办法，那就是，在<code>unsorted bin</code>中的chunk会保存指向<code>main_arena</code>某处的值。我们只需要泄露这个值，再通过<code>main_arena</code>与<code>libc base</code>的固定偏移，就能确定<code>libc</code>的基址。</p>
 <p>那么我们的利用思路就是通过覆盖某个hook函数为<code>one gadget</code>来get shell。那么，如何覆盖呢。</p>
 <p>这里用到一个小技巧，通过调试我们可以发现，在<code>main arena</code>的附近有<code>__malloc_hook</code>，这样我们就把目标定为修改<code>__malloc_hook</code>为<code>one gadget</code>。然后，在<code>__malloc_hook</code>附近，又可以发现：</p>
-<p><img src="http://119.29.111.48/images/Irregular_write_up_2/1.png" style="zoom : 50%"></p>
+<p><img src="https://i.loli.net/2020/01/17/OnCDsviRfx2JPtz.png" alt="1.png" style="zoom:50%;"></p>
 <p>再分开一点看。。。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">pwndbg&gt;</span> x/56xb 0x7f9023211af0</span><br><span class="line">0x7f9023211af0 &lt;_IO_wide_data_0+304&gt;:	0x60	0x02	0x21	0x23	0x90	0x7f	0x00	0x00</span><br><span class="line">0x7f9023211af8:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00</span><br><span class="line">0x7f9023211b00 &lt;__memalign_hook&gt;:	0x20	0x2e	0xed	0x22	0x90	0x7f	0x00	0x00</span><br><span class="line">0x7f9023211b08 &lt;__realloc_hook&gt;:	0x00	0x2a	0xed	0x22	0x90	0x7f	0x00	0x00</span><br><span class="line">0x7f9023211b10 &lt;__malloc_hook&gt;:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00</span><br><span class="line">0x7f9023211b18:	0x00	0x00	0x00	0x00	0x00	0x00	0x00	0x00</span><br><span class="line">0x7f9023211b20 &lt;main_arena&gt;:	0x00	0x00	0x00	0x00	0x01	0x00	0x00	0x00</span><br></pre></td></tr></table></figure>
 <p>可以发现，在<code>0x7f9023211af5</code>处，刚好有一串<code>0x7f 0x00 0x00 0x00 0x00 0x00 0x00 0x00</code>的字节，这转成<code>QWORD</code>正好就是<code>0x7f</code>，这样的话，就可以把这里作为<code>fake chunk</code>的<code>size</code>字段，那么<code>fake chunk</code>的开头就是<code>0x7f9023211af5 - 0x8</code>的位置了。</p>
@@ -832,7 +844,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
