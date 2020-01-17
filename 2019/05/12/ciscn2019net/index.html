@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Comic Sans MS:300,300italic,400,400italic,700,700italic|楷体:300,300italic,400,400italic,700,700italic|Ink Free:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/code_32.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/code_16.png?v=7.0.1">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="可以说，ciscn是我至今为数不多能做出题的比赛了23333菜的真实">
+<meta name="keywords" content="Reverse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CISCN2019线上re">
+<meta property="og:url" content="https://critizero.github.io/2019/05/12/ciscn2019net/index.html">
+<meta property="og:site_name" content="Critizero&#39;s">
+<meta property="og:description" content="可以说，ciscn是我至今为数不多能做出题的比赛了23333菜的真实">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/tbGfmPorpE6IhWa.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/549wubzZVIHgEUJ.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/AV7fhKHNt5eyIi2.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/R2rkSa6oCULBvdq.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/9H5JPGboYge1rEa.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/DwbSePsCEmfihq8.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/f2rtI9kl4vubwCF.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/jrdyRKFSG8lI5zC.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/LSsvolPZmqBihdR.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/pMPrVWFdYuT4Hba.png">
+<meta property="og:image" content="https://i.loli.net/2020/01/17/eXLGRTicJlbmfD5.png">
+<meta property="og:updated_time" content="2019-05-12T12:35:15.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CISCN2019线上re">
+<meta name="twitter:description" content="可以说，ciscn是我至今为数不多能做出题的比赛了23333菜的真实">
+<meta name="twitter:image" content="https://i.loli.net/2020/01/17/tbGfmPorpE6IhWa.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://critizero.github.io/2019/05/12/ciscn2019net/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>CISCN2019线上re | Critizero's</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Critizero's</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-挖坑">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/todo/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>挖坑</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://critizero.github.io/2019/05/12/ciscn2019net/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Critizero">
+      <meta itemprop="description" content="当三日不见，刮目相看">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Critizero's">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CISCN2019线上re
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-12 20:35:15" itemprop="dateCreated datePublished" datetime="2019-05-12T20:35:15+08:00">2019-05-12</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/CTF/" itemprop="url" rel="index"><span itemprop="name">CTF</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/05/12/ciscn2019net/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/12/ciscn2019net/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>可以说，ciscn是我至今为数不多能做出题的比赛了23333菜的真实</p>
+<a id="more"></a>
+<h1 id="0x00-easyGO"><a href="#0x00-easyGO" class="headerlink" title="0x00 easyGO"></a>0x00 easyGO</h1><p>看名字是go语言和题目，用ida打开看看，wdm这函数数量，怕了怕了。首先运行，然后ida搜索字符串，通过交叉引用，找到主要逻辑，简单分析了一下发现还是有点复杂，还是上手gdb调试看看。</p>
+<p>设置断点在提示输入的地方，然后开始运行。发现输入后过了不久，程序就取出一长串字符串。</p>
+<p><img src="https://i.loli.net/2020/01/17/tbGfmPorpE6IhWa.png" alt="1.png" style="zoom:50%;"></p>
+<p>猜测可能是目标字符串，需要与之进行比对。继续调试。</p>
+<p>在经过函数0x47e620这个函数之后，flag已经解出来了。</p>
+<p><img src="https://i.loli.net/2020/01/17/549wubzZVIHgEUJ.png" alt="2.png" style="zoom:50%;"></p>
+<h1 id="0x01-bbvvmm"><a href="#0x01-bbvvmm" class="headerlink" title="0x01 bbvvmm"></a>0x01 bbvvmm</h1><p>文件使用ida打开，发现主要逻辑还是挺明显的。输入用户名和密码，分别校验，对了就能登陆拿到flag，是有远程环境的。</p>
+<p><img src="https://i.loli.net/2020/01/17/AV7fhKHNt5eyIi2.png" alt="3.png" style="zoom:50%;"></p>
+<p><img src="https://i.loli.net/2020/01/17/R2rkSa6oCULBvdq.png" alt="4.png" style="zoom:50%;"></p>
+<h2 id="用户名"><a href="#用户名" class="headerlink" title="用户名"></a>用户名</h2><p><img src="https://i.loli.net/2020/01/17/9H5JPGboYge1rEa.png" alt="5.png" style="zoom:50%;"></p>
+<p>通过逆运算，sub_400AA6是个换了表的BASE64加密，通过写解密代码，解得正确的v33应该为“EF468DBAF985B2509C9E200CF3525AB6”。</p>
+<p>然后观察到sub_401738函数的参数都与输入无关，且v10要作为sub_4018C4的输入，则通过调试，直接得到v10的值为：</p>
+<p><img src="https://i.loli.net/2020/01/17/DwbSePsCEmfihq8.png" alt="6.png" style="zoom:50%;"></p>
+<p>然后对于函数sub_4018c4，除了v13以外所有的参数都已知，所以可以推断出v13 的值。查看这个函数</p>
+<p><img src="https://i.loli.net/2020/01/17/f2rtI9kl4vubwCF.png" alt="7.png" style="zoom:50%;"></p>
+<p>通过分析，这个函数中只有sub_201362起作用，循环只经历了一次，相当于只进行了一次sub_201362操作。</p>
+<p><img src="https://i.loli.net/2020/01/17/jrdyRKFSG8lI5zC.png" alt="8.png" style="zoom:50%;"></p>
+<p>目前已知v5，这样可以知道v14,v13,v12,v11的值，while循环的初值是s,v8,v9,v10，循环中函数是异或操作，于是我们可以通过反推得到函数的输入v3。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __int64 long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __int8 char</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _BYTE unsigned char</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _WORD unsigned short</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _DWORD unsigned int</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LOBYTE(x) (*((_BYTE*)&amp;(x))) <span class="comment">// low byte </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LOWORD(x) (*((_WORD*)&amp;(x))) <span class="comment">// low word </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LODWORD(x) (*((_DWORD*)&amp;(x))) <span class="comment">// low dword </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HIBYTE(x) (*((_BYTE*)&amp;(x)+1)) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HIWORD(x) (*((_WORD*)&amp;(x)+1)) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> HIDWORD(x) (*((_DWORD*)&amp;(x)+1)) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BYTEn(x, n) (*((_BYTE*)&amp;(x)+n)) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WORDn(x, n) (*((_WORD*)&amp;(x)+n)) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BYTE1(x) BYTEn(x, 1) <span class="comment">// byte 1 (counting from 0) </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BYTE2(x) BYTEn(x, 2) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BYTE3(x) BYTEn(x, 3) </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BYTE4(x) BYTEn(x, 4)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span> data[]=&#123;</span><br><span class="line">  <span class="number">0xD6</span>, <span class="number">0x90</span>, <span class="number">0xE9</span>, <span class="number">0xFE</span>, <span class="number">0xCC</span>, <span class="number">0xE1</span>, <span class="number">0x3D</span>, <span class="number">0xB7</span>, <span class="number">0x16</span>, <span class="number">0xB6</span>, </span><br><span class="line">  <span class="number">0x14</span>, <span class="number">0xC2</span>, <span class="number">0x28</span>, <span class="number">0xFB</span>, <span class="number">0x2C</span>, <span class="number">0x05</span>, <span class="number">0x2B</span>, <span class="number">0x67</span>, <span class="number">0x9A</span>, <span class="number">0x76</span>, </span><br><span class="line">  <span class="number">0x2A</span>, <span class="number">0xBE</span>, <span class="number">0x04</span>, <span class="number">0xC3</span>, <span class="number">0xAA</span>, <span class="number">0x44</span>, <span class="number">0x13</span>, <span class="number">0x26</span>, <span class="number">0x49</span>, <span class="number">0x86</span>, </span><br><span class="line">  <span class="number">0x06</span>, <span class="number">0x99</span>, <span class="number">0x9C</span>, <span class="number">0x42</span>, <span class="number">0x50</span>, <span class="number">0xF4</span>, <span class="number">0x91</span>, <span class="number">0xEF</span>, <span class="number">0x98</span>, <span class="number">0x7A</span>, </span><br><span class="line">  <span class="number">0x33</span>, <span class="number">0x54</span>, <span class="number">0x0B</span>, <span class="number">0x43</span>, <span class="number">0xED</span>, <span class="number">0xCF</span>, <span class="number">0xAC</span>, <span class="number">0x62</span>, <span class="number">0xE4</span>, <span class="number">0xB3</span>, </span><br><span class="line">  <span class="number">0x1C</span>, <span class="number">0xA9</span>, <span class="number">0xC9</span>, <span class="number">0x08</span>, <span class="number">0xE8</span>, <span class="number">0x95</span>, <span class="number">0x80</span>, <span class="number">0xDF</span>, <span class="number">0x94</span>, <span class="number">0xFA</span>, </span><br><span class="line">  <span class="number">0x75</span>, <span class="number">0x8F</span>, <span class="number">0x3F</span>, <span class="number">0xA6</span>, <span class="number">0x47</span>, <span class="number">0x07</span>, <span class="number">0xA7</span>, <span class="number">0xFC</span>, <span class="number">0xF3</span>, <span class="number">0x73</span>, </span><br><span class="line">  <span class="number">0x17</span>, <span class="number">0xBA</span>, <span class="number">0x83</span>, <span class="number">0x59</span>, <span class="number">0x3C</span>, <span class="number">0x19</span>, <span class="number">0xE6</span>, <span class="number">0x85</span>, <span class="number">0x4F</span>, <span class="number">0xA8</span>, </span><br><span class="line">  <span class="number">0x68</span>, <span class="number">0x6B</span>, <span class="number">0x81</span>, <span class="number">0xB2</span>, <span class="number">0x71</span>, <span class="number">0x64</span>, <span class="number">0xDA</span>, <span class="number">0x8B</span>, <span class="number">0xF8</span>, <span class="number">0xEB</span>, </span><br><span class="line">  <span class="number">0x0F</span>, <span class="number">0x4B</span>, <span class="number">0x70</span>, <span class="number">0x56</span>, <span class="number">0x9D</span>, <span class="number">0x35</span>, <span class="number">0x1E</span>, <span class="number">0x24</span>, <span class="number">0x0E</span>, <span class="number">0x5E</span>, </span><br><span class="line">  <span class="number">0x63</span>, <span class="number">0x58</span>, <span class="number">0xD1</span>, <span class="number">0xA2</span>, <span class="number">0x25</span>, <span class="number">0x22</span>, <span class="number">0x7C</span>, <span class="number">0x3B</span>, <span class="number">0x01</span>, <span class="number">0x21</span>, </span><br><span class="line">  <span class="number">0x78</span>, <span class="number">0x87</span>, <span class="number">0xD4</span>, <span class="number">0x00</span>, <span class="number">0x46</span>, <span class="number">0x57</span>, <span class="number">0x9F</span>, <span class="number">0xD3</span>, <span class="number">0x27</span>, <span class="number">0x52</span>, </span><br><span class="line">  <span class="number">0x4C</span>, <span class="number">0x36</span>, <span class="number">0x02</span>, <span class="number">0xE7</span>, <span class="number">0xA0</span>, <span class="number">0xC4</span>, <span class="number">0xC8</span>, <span class="number">0x9E</span>, <span class="number">0xEA</span>, <span class="number">0xBF</span>, </span><br><span class="line">  <span class="number">0x8A</span>, <span class="number">0xD2</span>, <span class="number">0x40</span>, <span class="number">0xC7</span>, <span class="number">0x38</span>, <span class="number">0xB5</span>, <span class="number">0xA3</span>, <span class="number">0xF7</span>, <span class="number">0xF2</span>, <span class="number">0xCE</span>, </span><br><span class="line">  <span class="number">0xF9</span>, <span class="number">0x61</span>, <span class="number">0x15</span>, <span class="number">0xA1</span>, <span class="number">0xE0</span>, <span class="number">0xAE</span>, <span class="number">0x5D</span>, <span class="number">0xA4</span>, <span class="number">0x9B</span>, <span class="number">0x34</span>, </span><br><span class="line">  <span class="number">0x1A</span>, <span class="number">0x55</span>, <span class="number">0xAD</span>, <span class="number">0x93</span>, <span class="number">0x32</span>, <span class="number">0x30</span>, <span class="number">0xF5</span>, <span class="number">0x8C</span>, <span class="number">0xB1</span>, <span class="number">0xE3</span>, </span><br><span class="line">  <span class="number">0x1D</span>, <span class="number">0xF6</span>, <span class="number">0xE2</span>, <span class="number">0x2E</span>, <span class="number">0x82</span>, <span class="number">0x66</span>, <span class="number">0xCA</span>, <span class="number">0x60</span>, <span class="number">0xC0</span>, <span class="number">0x29</span>, </span><br><span class="line">  <span class="number">0x23</span>, <span class="number">0xAB</span>, <span class="number">0x0D</span>, <span class="number">0x53</span>, <span class="number">0x4E</span>, <span class="number">0x6F</span>, <span class="number">0xD5</span>, <span class="number">0xDB</span>, <span class="number">0x37</span>, <span class="number">0x45</span>, </span><br><span class="line">  <span class="number">0xDE</span>, <span class="number">0xFD</span>, <span class="number">0x8E</span>, <span class="number">0x2F</span>, <span class="number">0x03</span>, <span class="number">0xFF</span>, <span class="number">0x6A</span>, <span class="number">0x72</span>, <span class="number">0x6D</span>, <span class="number">0x6C</span>, </span><br><span class="line">  <span class="number">0x5B</span>, <span class="number">0x51</span>, <span class="number">0x8D</span>, <span class="number">0x1B</span>, <span class="number">0xAF</span>, <span class="number">0x92</span>, <span class="number">0xBB</span>, <span class="number">0xDD</span>, <span class="number">0xBC</span>, <span class="number">0x7F</span>, </span><br><span class="line">  <span class="number">0x11</span>, <span class="number">0xD9</span>, <span class="number">0x5C</span>, <span class="number">0x41</span>, <span class="number">0x1F</span>, <span class="number">0x10</span>, <span class="number">0x5A</span>, <span class="number">0xD8</span>, <span class="number">0x0A</span>, <span class="number">0xC1</span>, </span><br><span class="line">  <span class="number">0x31</span>, <span class="number">0x88</span>, <span class="number">0xA5</span>, <span class="number">0xCD</span>, <span class="number">0x7B</span>, <span class="number">0xBD</span>, <span class="number">0x2D</span>, <span class="number">0x74</span>, <span class="number">0xD0</span>, <span class="number">0x12</span>, </span><br><span class="line">  <span class="number">0xB8</span>, <span class="number">0xE5</span>, <span class="number">0xB4</span>, <span class="number">0xB0</span>, <span class="number">0x89</span>, <span class="number">0x69</span>, <span class="number">0x97</span>, <span class="number">0x4A</span>, <span class="number">0x0C</span>, <span class="number">0x96</span>, </span><br><span class="line">  <span class="number">0x77</span>, <span class="number">0x7E</span>, <span class="number">0x65</span>, <span class="number">0xB9</span>, <span class="number">0xF1</span>, <span class="number">0x09</span>, <span class="number">0xC5</span>, <span class="number">0x6E</span>, <span class="number">0xC6</span>, <span class="number">0x84</span>, </span><br><span class="line">  <span class="number">0x18</span>, <span class="number">0xF0</span>, <span class="number">0x7D</span>, <span class="number">0xEC</span>, <span class="number">0x3A</span>, <span class="number">0xDC</span>, <span class="number">0x4D</span>, <span class="number">0x20</span>, <span class="number">0x79</span>, <span class="number">0xEE</span>, </span><br><span class="line">  <span class="number">0x5F</span>, <span class="number">0x3E</span>, <span class="number">0xD7</span>, <span class="number">0xCB</span>, <span class="number">0x39</span>, <span class="number">0x48</span>, <span class="number">0xC6</span>, <span class="number">0xBA</span>, <span class="number">0xB1</span>, <span class="number">0xA3</span>, </span><br><span class="line">  <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x50</span>, <span class="number">0x33</span>, <span class="number">0xAA</span>, <span class="number">0x56</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, </span><br><span class="line">  <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x97</span>, <span class="number">0x91</span>, <span class="number">0x7D</span>, <span class="number">0x67</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, </span><br><span class="line">  <span class="number">0xDC</span>, <span class="number">0x22</span>, <span class="number">0x70</span>, <span class="number">0xB2</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>, <span class="number">0x00</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> table[]=&#123;</span><br><span class="line"><span class="number">0x0078da27f844fdd1</span>,</span><br><span class="line"><span class="number">0x0011508c60fc86a8</span>,	<span class="number">0x00424adbca3c9b78</span>,</span><br><span class="line"><span class="number">0x001edff37133dadc</span>,	<span class="number">0x002d6f30b72f5731</span>,</span><br><span class="line"><span class="number">0x00646f38d17560d5</span>,	<span class="number">0x006a9ec9f150e4ad</span>,</span><br><span class="line"><span class="number">0x0047c478c16d51b7</span>,	<span class="number">0x00654ac0925a0855</span>,</span><br><span class="line"><span class="number">0x002acd03e72b4d73</span>,	<span class="number">0x006c607809a5a671</span>,</span><br><span class="line"><span class="number">0x00061673df68b5ba</span>,	<span class="number">0x007723b0becf17c0</span>,</span><br><span class="line"><span class="number">0x004cd4e74b53dc65</span>,	<span class="number">0x001d0f96c282ec15</span>,</span><br><span class="line"><span class="number">0x00547c7686512b09</span>,	<span class="number">0x001b65c1b9383cbc</span>,</span><br><span class="line"><span class="number">0x006dd7967009d87f</span>,	<span class="number">0x000afb8629d9217a</span>,</span><br><span class="line"><span class="number">0x00490d14437c248b</span>,	<span class="number">0x001efc829bc5cfbe</span>,</span><br><span class="line"><span class="number">0x005b8ef37683e1b6</span>,	<span class="number">0x0054de5a1d64849f</span>,</span><br><span class="line"><span class="number">0x00068a31fa1fa382</span>,	<span class="number">0x004770760f09a64c</span>,</span><br><span class="line"><span class="number">0x00636d44915d5beb</span>,	<span class="number">0x00621e68982b67bc</span>,</span><br><span class="line"><span class="number">0x003825cf5fd2e1e6</span>,	<span class="number">0x004cd057e794f4f6</span>,</span><br><span class="line"><span class="number">0x00772696beb95357</span>,	<span class="number">0x0045fd07fb3bcfc0</span>,</span><br><span class="line"><span class="number">0x0066505eb43dc7dd</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">unsigned</span> <span class="keyword">char</span> <span class="title">sub_400D38</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> data[a1];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> __int64 __<span class="function">fastcall <span class="title">sub_400D87</span><span class="params">(<span class="keyword">int</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">unsigned</span> __int8 v1; <span class="comment">// ST30_1</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int8 v2; <span class="comment">// ST31_1</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int8 v3; <span class="comment">// ST32_1</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int8 v4; <span class="comment">// al</span></span><br><span class="line">  <span class="keyword">unsigned</span> __int64 v5; <span class="comment">// ST10_8</span></span><br><span class="line"></span><br><span class="line">  v1 = sub_400D38(BYTE3(a1));</span><br><span class="line">  v2 = sub_400D38(BYTE2(a1));</span><br><span class="line">  v3 = sub_400D38(BYTE1(a1));</span><br><span class="line">  v4 = sub_400D38(a1);</span><br><span class="line">  v5 = ((<span class="keyword">unsigned</span> __int64)v3 &lt;&lt; <span class="number">8</span>) | ((<span class="keyword">unsigned</span> __int64)v2 &lt;&lt; <span class="number">16</span>) | ((<span class="keyword">unsigned</span> __int64)v1 &lt;&lt; <span class="number">24</span>) | v4;</span><br><span class="line">  <span class="keyword">return</span> (((<span class="keyword">unsigned</span> __int64)((v3 &lt;&lt; <span class="number">8</span>) | (v2 &lt;&lt; <span class="number">16</span>) | (v1 &lt;&lt; <span class="number">24</span>) | (<span class="keyword">unsigned</span> <span class="keyword">int</span>)v4) &lt;&lt; <span class="number">18</span>) | (v5 &gt;&gt; <span class="number">14</span>)) ^ v5 ^ (<span class="number">4L</span>L * ((v3 &lt;&lt; <span class="number">8</span>) | (v2 &lt;&lt; <span class="number">16</span>) | (v1 &lt;&lt; <span class="number">24</span>) | (<span class="keyword">unsigned</span> <span class="keyword">int</span>)v4) | (v5 &gt;&gt; <span class="number">30</span>)) ^ (((<span class="keyword">unsigned</span> __int64)(<span class="keyword">unsigned</span> <span class="keyword">int</span>)v5 &lt;&lt; <span class="number">10</span>) | (v5 &gt;&gt; <span class="number">22</span>)) ^ (((<span class="keyword">unsigned</span> __int64)((v3 &lt;&lt; <span class="number">8</span>) | (v2 &lt;&lt; <span class="number">16</span>) | (v1 &lt;&lt; <span class="number">24</span>) | (<span class="keyword">unsigned</span> <span class="keyword">int</span>)v4) &lt;&lt; <span class="number">24</span>) | (v5 &gt;&gt; <span class="number">8</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">char</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	a = (c&amp;<span class="number">0xf</span>)+<span class="number">0x30</span>;</span><br><span class="line">	b = (c&gt;&gt;<span class="number">4</span>)+<span class="number">0x30</span>;</span><br><span class="line">	<span class="keyword">if</span>(b&lt;=<span class="number">0x39</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%02x "</span>,b);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%02x "</span>,b+<span class="number">7</span>);</span><br><span class="line">	<span class="keyword">if</span>(a&lt;=<span class="number">0x39</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%02x "</span>,a);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%02x "</span>,a+<span class="number">7</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%c\n"</span>,c);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res[<span class="number">64</span>];</span><br><span class="line">	res[<span class="number">35</span>] = <span class="number">0xef468dba</span>;</span><br><span class="line">	res[<span class="number">34</span>] = <span class="number">0xf985b250</span>;</span><br><span class="line">	res[<span class="number">33</span>] = <span class="number">0x9c9e200c</span>;</span><br><span class="line">	res[<span class="number">32</span>] = <span class="number">0xf3525ab6</span>;</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">31</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		res[i] = res[i+<span class="number">4</span>]^sub_400D87(res[i+<span class="number">1</span>]^res[i+<span class="number">2</span>]^res[i+<span class="number">3</span>]^table[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"0x%x\n0x%x\n0x%x\n0x%x\n"</span>,res[<span class="number">0</span>],res[<span class="number">1</span>],res[<span class="number">2</span>],res[<span class="number">3</span>]);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> s = &#123;<span class="number">0xe9</span>,<span class="number">0x55</span>,<span class="number">0x47</span>,<span class="number">0x9b</span>,<span class="number">0x8a</span>,<span class="number">0x0a</span>,<span class="number">0x0f</span>,<span class="number">0xfd</span>,<span class="number">0x82</span>,<span class="number">0x24</span>,<span class="number">0x5f</span>,<span class="number">0x47</span>,<span class="number">0x33</span>,<span class="number">0x85</span>,<span class="number">0x91</span>,<span class="number">0xc4</span>&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">128</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		test(i); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>于是可以得到v3={0x36, 0x32, 0x36, 0x31, 0x36, 0x34, 0x37, 0x32, 0x36, 0x35, 0x37, 0x32, 0x33, 0x31, 0x33, 0x32}；</p>
+<p>这样我们得到v13的值，再进一步回推sub_4066c0，就可以到正确的输入。</p>
+<p><img src="https://i.loli.net/2020/01/17/LSsvolPZmqBihdR.png" alt="9.png" style="zoom:50%;"></p>
+<p>可以发现是把一个字节扩展为两个字节的函数，而替换表刚刚的脚本已经一同打印出来了，通过比对，得到用户名为：’badrer12’</p>
+<h2 id="密码"><a href="#密码" class="headerlink" title="密码"></a>密码</h2><p>密码部分是一个使用while循环实现的虚拟机，通过分析各个调用表的函数内容，得到的伪汇编代码如下（部分）：</p>
+<p><img src="https://i.loli.net/2020/01/17/pMPrVWFdYuT4Hba.png" alt="10.png" style="zoom:50%;"></p>
+<p>实现的功能是将输入与’x’,’y’,’z’,’{‘,’|’,’}’分别异或，然后把每次异或的结果异或，并且要求得到0，这样就说明密码就是’xyz{|}’。</p>
+<p>最后远程需要借助pwntools，不然莫得回显</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"><span class="comment">#-*- coding:UTF-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line"></span><br><span class="line">context.log_level = <span class="string">'debug'</span></span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">'39.106.224.151'</span>, <span class="number">10001</span>)</span><br><span class="line"></span><br><span class="line">p.recvuntil(<span class="string">'name'</span>)</span><br><span class="line">p.sendline(<span class="string">'badrer12'</span>)</span><br><span class="line"></span><br><span class="line">p.recvuntil(<span class="string">'word:'</span>)</span><br><span class="line">p.send(<span class="string">'xyz&#123;|&#125;'</span>)</span><br><span class="line"></span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.loli.net/2020/01/17/eXLGRTicJlbmfD5.png" alt="11.png" style="zoom:50%;"></p>
+<h1 id="0x02-总结"><a href="#0x02-总结" class="headerlink" title="0x02 总结"></a>0x02 总结</h1><p>emmm国赛只会做两个逆向。。。其中一个还是调试得到。。。</p>
+<p>不过对于虚拟机这样的题又练了手，之前一直觉得这类题好难，看不懂，其实主要是不够耐心（卒。希望在接下来的比赛中能多做几道逆向。。。不然太划水感觉都要被t出队伍了QAQ</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Critizero</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://critizero.github.io/2019/05/12/ciscn2019net/" title="CISCN2019线上re">https://critizero.github.io/2019/05/12/ciscn2019net/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Reverse/" rel="tag"># Reverse</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/29/studypwn_unlink/" rel="next" title="Study Note - Unlink">
+                <i class="fa fa-chevron-left"></i> Study Note - Unlink
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/17/day0_tcache/" rel="prev" title="Day 0 - tcache">
+                Day 0 - tcache <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Critizero">
+            
+              <p class="site-author-name" itemprop="name">Critizero</p>
+              <div class="site-description motion-element" itemprop="description">当三日不见，刮目相看</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/critizero" title="GitHub &rarr; https://github.com/critizero" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:checcccc@163.com" title="E-Mail &rarr; mailto:checcccc@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/Critizero" title="Twitter &rarr; https://twitter.com/Critizero" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Dalao~
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.codgician.pw/" title="https://blog.codgician.pw/" rel="noopener" target="_blank">codgician</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.fandazh.cn" title="http://www.fandazh.cn" rel="noopener" target="_blank">fanda</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://passingfoam.com/" title="http://passingfoam.com/" rel="noopener" target="_blank">passingfoam</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://fiercec4t.top/" title="http://fiercec4t.top/" rel="noopener" target="_blank">fiercec4t</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dldxz.cn" title="https://dldxz.cn" rel="noopener" target="_blank">dldxz</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://fzwjscj.xyz/" title="http://fzwjscj.xyz/" rel="noopener" target="_blank">FzWjScJ</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jayxv.github.io/" title="https://jayxv.github.io/" rel="noopener" target="_blank">V</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x00-easyGO"><span class="nav-number">1.</span> <span class="nav-text">0x00 easyGO</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-bbvvmm"><span class="nav-number">2.</span> <span class="nav-text">0x01 bbvvmm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户名"><span class="nav-number">2.1.</span> <span class="nav-text">用户名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#密码"><span class="nav-number">2.2.</span> <span class="nav-text">密码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-总结"><span class="nav-number">3.</span> <span class="nav-text">0x02 总结</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Critizero</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/affix.js?v=7.0.1"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Klct3z761V5olFDdNX9DxLmo-gzGzoHsz',
+    appKey: '5NxGMcgsdFe8Me8hni8wIYHB',
+    placeholder: 'Just comment here',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
